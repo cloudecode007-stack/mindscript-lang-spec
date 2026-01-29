@@ -1,12 +1,49 @@
-# Byte-compiled / optimized / DLL files
+# =======================================================
+# MindScript Open Source Project .gitignore
+# Оптимизирован для публичных репозиториев на GitHub
+# Версия: 1.0.0
+# =======================================================
+
+# === ОСНОВНЫЕ ПРАВИЛА ===
+# Никогда не коммитьте секретные данные!
+
+# === СИСТЕМНЫЕ ФАЙЛЫ ===
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Saved Application State
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# === ЯЗЫКИ ПРОГРАММИРОВАНИЯ ===
+
+# Python
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -20,188 +57,381 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# Rust
+/target/
+**/*.rs.bk
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
+# Go
+vendor/
+*.test
+*.out
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# === IDE и РЕДАКТОРЫ ===
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# PyCharm
+.idea/
+.idea_modules/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.atom/
+.history
+
+# === СРЕДЫ ВЫПОЛНЕНИЯ ===
+
+# Virtualenv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# Conda
+.conda/
+conda/
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# === ФАЙЛЫ ПРОЕКТА MINDScript ===
+
+# Временные файлы компиляции (если используются)
+*.mindc
+*.mindout
+.mindcache/
+.mindbuild/
+dist/
+build/
+
+# Кэш ИИ запросов (не должен быть в репозитории)
+.ai_cache/
+.mindai_cache/
+*.aicache
+*.mindcache
+
+# Файлы сессий
+.mindsession
+.mindstate
+.mindlock
+
+# Файлы конфигурации локального пользователя
+mindconfig.user.json
+.mindconfig.local
+.config.local.*
+
+# === ЛОГИ И ОТЧЕТЫ ===
+
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+*.log.*
+logs/
+log/
+*.logs
+
+# Отчеты покрытия кода
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
-*.py.cover
 .hypothesis/
 .pytest_cache/
 cover/
+htmlcov/
 
-# Translations
-*.mo
-*.pot
+# Отчеты тестирования
+test-results/
+test-reports/
+*.junit.xml
+*.trx
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+# === СБОРОЧНЫЕ ФАЙЛЫ ===
 
-# Flask stuff:
-instance/
-.webassets-cache
+# Пакеты
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
+# Дистрибутивы
+dist/
+build/
+out/
 target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Документация (сгенерированная)
+docs/_build/
+docs/build/
+site/
 
-# IPython
-profile_default/
-ipython_config.py
+# === БАЗЫ ДАННЫХ ===
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+# Временные файлы БД
+*.fdb
+*.mdb
+*.ldb
+*.ndf
+*.mdf
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
+# === СЕКРЕТЫ И КОНФИДЕНЦИАЛЬНЫЕ ДАННЫЕ ===
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-#poetry.toml
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-#pdm.lock
-#pdm.toml
-.pdm-python
-.pdm-build/
-
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-#pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
+# НИКОГДА не коммитьте эти файлы!
 .env
-.envrc
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+secrets.env
+*.secret
+*.key
+*.pem
+*.crt
+*.cert
+*.pfx
+*.p12
+*.der
+credentials.json
+*.credentials
+firebase-key.json
+service-account.json
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Конфигурационные файлы с секретами
+config.local.*
+settings.local.*
 
-# Rope project settings
-.ropeproject
+# === ФАЙЛЫ ЗАВИСИМОСТЕЙ ===
 
-# mkdocs documentation
-/site
+# Вендорные зависимости (зависит от проекта)
+vendor/
+.cache/
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# === ФАЙЛЫ ДОКУМЕНТАЦИИ ===
 
-# Pyre type checker
-.pyre/
+# Сгенерированная документация
+docs/_build/
+docs/_static/
+docs/_templates/
+docs/api/
 
-# pytype static type analyzer
-.pytype/
+# === ФАЙЛЫ ТЕСТИРОВАНИЯ ===
 
-# Cython debug symbols
-cython_debug/
+# Файлы для тестирования производительности
+*.prof
+*.profile
+*.profdata
+*.gcda
+*.gcno
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+# Дампы памяти
+*.heapdump
+*.core
+*.mdmp
 
-# Abstra
-# Abstra is an AI-powered process automation framework.
-# Ignore directories containing user credentials, local state, and settings.
-# Learn more at https://abstra.io/docs
-.abstra/
+# === СПЕЦИФИЧНЫЕ ДЛЯ ИНСТРУМЕНТОВ ===
 
-# Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+# Docker
+.dockerignore
+docker-compose.override.yml
 
-# Ruff stuff:
-.ruff_cache/
+# Kubernetes
+kubeconfig
+*.kubeconfig
 
-# PyPI configuration file
-.pypirc
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+terraform.tfstate.backup
 
-# Cursor
-#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
-#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
-#  refer to https://docs.cursor.com/context/ignore-files
-.cursorignore
-.cursorindexingignore
+# === ВРЕМЕННЫЕ ФАЙЛЫ ===
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+# Временные файлы
+tmp/
+temp/
+*.tmp
+*.temp
+.cache/
+.tmp/
+.temp/
+
+# Бэкапы
+*.bak
+*.backup
+*.old
+~*
+*.orig
+*.rej
+
+# === ИСКЛЮЧЕНИЯ: ФАЙЛЫ, КОТОРЫЕ НУЖНО КОММИТИТЬ ===
+
+# !ВАЖНО: Эти файлы ДОЛЖНЫ быть в репозитории
+
+# Основные файлы проекта
+!README.md
+!README.ru.md
+!LICENSE
+!LICENSE.ru.md
+!.gitignore
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+
+# Конфигурация проекта
+!pyproject.toml
+!setup.py
+!setup.cfg
+!MANIFEST.in
+!requirements.txt
+!requirements-dev.txt
+
+# Конфигурация инструментов
+!.editorconfig
+!.pre-commit-config.yaml
+!.markdownlint.json
+!.yamllint.yaml
+
+# Документация
+!docs/
+!docs/*.md
+!docs/*.rst
+!mkdocs.yml
+!readthedocs.yml
+
+# Примеры
+!examples/
+!examples/*.mind
+!examples/*.py
+
+# Тесты
+!tests/
+!tests/*.py
+!tests/*.mind
+!conftest.py
+!pytest.ini
+!tox.ini
+
+# Исходный код
+!src/
+!src/**/*.py
+!src/**/*.mind
+!lib/
+!lib/**/*.py
+!lib/**/*.mind
+
+# Конфигурация CI/CD
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+!.gitlab-ci.yml
+!.travis.yml
+!azure-pipelines.yml
+
+# Конфигурация IDE (только общие настройки)
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# === СПЕЦИАЛЬНЫЕ ПРАВИЛА ДЛЯ MINDScript ===
+
+# Исключить только временные файлы MindScript, но не исходники
+!*.mind  # Исходные файлы MindScript
+
+# Исключить локальные кэши обучения моделей
+*.mindmodel
+training_checkpoints/
+experiments/
+runs/
+
+# === КОНЕЦ ФАЙЛА ===
